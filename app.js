@@ -15,7 +15,10 @@ connectDB();
 const app = express();
 
 // ✅ Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://dummy.shreemai.com",
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
